@@ -6,7 +6,7 @@ using Lab4CSharp;
 /// </summary>
 ///
 Console.WriteLine("Lab4 C# ");
-AnyFunc1();
+
 
 /// <summary>
 /// 
@@ -76,8 +76,130 @@ void AnyFunc1()
         Console.WriteLine($"An error occurred: {ex.Message}");
     }
 }
+void AnyFunc2()
+{
+  
+        // Create an instance of the Money class
+        Money money = new Money(10, 5);
+
+        // Display information about the money
+        Console.WriteLine("Initial Money Information:");
+        money.DisplayInfo();
+        Console.WriteLine($"Total Amount: {money.TotalAmount}");
+        Console.WriteLine($"Is Enough Money: {Money.IsEnoughMoney(50)}");
+
+        // Accessing money using indexers
+        Console.WriteLine("\nAccessing Money Using Indexers:");
+        Console.WriteLine($"First: {money[0]}, Second: {money[1]}");
+
+        // Modifying money using indexers
+        money[0] = 3;
+        money[1] = 7;
+
+        Console.WriteLine("Money After Modifying Using Indexers:");
+        money.DisplayInfo();
+
+        // Increment and Decrement operators
+        Console.WriteLine("\nIncrement and Decrement Operators:");
+        money++;
+        money.DisplayInfo();
+
+        money--;
+        money.DisplayInfo();
+
+        // Logical NOT operator
+        Console.WriteLine($"\nLogical NOT Operator: {!money}");
+
+        // Adding money
+        Console.WriteLine("\nAdding Money:");
+        Money newMoney = money + 2.5;
+        Console.WriteLine("Money After Adding:");
+        newMoney.DisplayInfo();
+
+        // Changing nominal and num properties
+        Console.WriteLine("\nChanging Nominal and Num Properties:");
+        money.Nominal = 20;
+        money.Num = 3;
+        Console.WriteLine("Money After Changing Properties:");
+        money.DisplayInfo();
+        Console.WriteLine($"Total Amount: {money.TotalAmount}");
+
+        // Calculate items to buy
+        Console.WriteLine($"\nCalculating Items to Buy for Amount 60: {Money.CalculateItemsToBuy(60)}");
+
+        // Check if there is enough money for a specific amount
+        Console.WriteLine($"Is Enough Money for Amount 25: {money.IsEnoughMoneyThis(25)}");
+
+        // Display the final count
+        Console.WriteLine($"\nFinal Count: {Money.Count}");
+    
+
+
+}
+
+void AnyFunc3()
+{
+    try
+    {
+        // Creating vectors
+        VectorLong vector1 = new VectorLong(5);
+        VectorLong vector2 = new VectorLong(5);
+
+        // Initializing vectors
+        vector1.FillVectorWithRandomValues();
+        vector2.FillVectorWithRandomValues();
+
+        // Displaying vectors
+        Console.WriteLine("Vector 1:");
+        vector1.DisplayVector();
+
+        Console.WriteLine("\nVector 2:");
+        vector2.DisplayVector();
+
+        // Testing various operations
+        Console.WriteLine("\nVector addition:");
+        VectorLong additionResult = vector1 + vector2;
+        additionResult.DisplayVector();
+
+        Console.WriteLine("\nVector subtraction:");
+        VectorLong subtractionResult = vector1 - vector2;
+        subtractionResult.DisplayVector();
+
+        Console.WriteLine("\nVector multiplication:");
+        VectorLong multiplicationResult = vector1 * vector2;
+        multiplicationResult.DisplayVector();
+
+        Console.WriteLine("\nScalar multiplication:");
+        VectorLong scalarMultiplicationResult = vector1 * 2; // Scalar multiplier
+        scalarMultiplicationResult.DisplayVector();
+
+        Console.WriteLine("\nVector division:");
+        VectorLong divisionResult = vector1 / vector2;
+        divisionResult.DisplayVector();
+
+        Console.WriteLine("\nScalar division:");
+        VectorLong scalarDivisionResult = vector1 / 2; // Scalar divisor
+        scalarDivisionResult.DisplayVector();
+
+        Console.WriteLine("\nVector modulus operation:");
+        VectorLong modulusResult = vector1 % vector2;
+        modulusResult.DisplayVector();
+
+        // Testing comparisons
+        Console.WriteLine($"\nVector1 > Vector2: {vector1 > vector2}");
+        Console.WriteLine($"Vector1 >= Vector2: {vector1 >= vector2}");
+        Console.WriteLine($"Vector1 < Vector2: {vector1 < vector2}");
+        Console.WriteLine($"Vector1 <= Vector2: {vector1 <= vector2}");
+        Console.WriteLine($"Vector1 == Vector2: {vector1 == vector2}");
+        Console.WriteLine($"Vector1 != Vector2: {vector1 != vector2}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"An error occurred: {ex.Message}");
+    }
+}
 Console.WriteLine("Problems 1 ");
-AnyFunc1();
+AnyFunc3();
 //  приклад класів
 UserClass cl = new UserClass();
 cl.Name = " UserClass top-level ";

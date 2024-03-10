@@ -14,6 +14,7 @@ namespace Lab4CSharp
         protected uint size;
         protected int codeError;
         protected static uint num_vl;
+       
 
         public VectorLong()
         {
@@ -117,6 +118,23 @@ namespace Lab4CSharp
                 }
                 IntArray[index] = value;
                 codeError = 0;
+            }
+        }
+        public void DisplayVector()
+        {
+            for (uint i = 0; i < size; i++)
+            {
+                Console.Write($"{this[(int)i]} ");
+            }
+            Console.WriteLine();
+        }
+        public void FillVectorWithRandomValues()
+        {
+            Random random = new Random();
+
+            for (uint i = 0; i < size; i++)
+            {
+                this[(int)i] = random.Next();
             }
         }
 
